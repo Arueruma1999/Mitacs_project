@@ -1,0 +1,9 @@
+# python project environment 
+.idea/
+venv/
+
+# python runtime files
+__pycache__/
+
+# personal data
+data_for_myself/
