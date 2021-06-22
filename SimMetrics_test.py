@@ -10,8 +10,11 @@ if __name__ == '__main__':
     # jpype.java.lang.System.out.println('Hello world!')
 
 
-    str1 = "hello world 1"
-    str2 = "hello world 2"
+    str1 = "helloworld1"
+    str2 = "helloworld2"
+
+    str1 = "abcdef"
+    str2 = "abcfde"
 
     print("string 1 is: ", str1)
     print("string 2 is: ", str2)
