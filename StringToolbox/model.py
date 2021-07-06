@@ -59,10 +59,10 @@ class MethodModel:
                 for j, string2 in enumerate(self.group2):
                     self.answers[i][j] = self.calculator(string1, string2)
         elif(self.input_type == "within"):
-            answers = np.empty((len(self.group1), len(self.group2)))
+            self.answers = np.empty((len(self.group1), len(self.group2)))
             for i in range(len(self.group1)):
                 for j in range(i+1):
-                    self.answers[i][j] = answers[j][i] = self.calculator(self.group1[i], self.group2[j])
+                    self.answers[i][j] = self.answers[j][i] = self.calculator(self.group1[i], self.group2[j])
         else:
             raise Exception(inputTypeErrorMessage)
 
@@ -89,7 +89,7 @@ class MethodModel:
         return self.get_similarity()/self.max_lengths
 
     def get_closest_index(self, k=1):
-         return np.array(list(map(lambda x: np.argpartition(x, k)[:k], self.get_normalized_distance())))
+        return np.array(list(map(lambda x: np.argpartition(x, k)[:k], self.get_normalized_distance())))
 
 
 

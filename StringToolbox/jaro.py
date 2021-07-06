@@ -1,5 +1,7 @@
 '''
+referene:
 https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance
+https://pypi.org/project/textdistance/
 '''
 from error_message import numpyImportErrorMessage
 from model import MethodModel
