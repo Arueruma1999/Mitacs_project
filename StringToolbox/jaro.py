@@ -1,8 +1,3 @@
-'''
-referene:
-https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance
-https://pypi.org/project/textdistance/
-'''
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 
@@ -12,6 +7,16 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class Jaro(MethodModel):
+    '''
+    This class is used to calculate the jaro similarity between strings.
+    It measures the similarity between strings using the number of the
+    matched characters over matching window and the number of transpositions.
+
+    referene:
+    https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance
+    https://pypi.org/project/textdistance/
+    '''
+
     def __init__(self):
         self.model_type = 'similarity'
         self.Winkler = False

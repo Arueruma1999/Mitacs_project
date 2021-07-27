@@ -1,7 +1,3 @@
-'''
-reference: https://en.wikipedia.org/wiki/Overlap_coefficient
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 from utils import get_n_grams
@@ -13,6 +9,14 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class OC(MethodModel):
+    '''
+    This class is used to calculate the overlap coefficient between strings.
+    The dice coefficient measures the similarity of the substrings components
+    of the two strings.
+
+    reference: https://en.wikipedia.org/wiki/Overlap_coefficient
+    '''
+
     def __init__(self, n = 1):
         self.model_type = 'similarity'
         self.n = n

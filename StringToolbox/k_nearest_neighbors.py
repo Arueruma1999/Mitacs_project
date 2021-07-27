@@ -1,6 +1,3 @@
-'''
-reference:https://gitee.com/yukio233/Machine-Learning-Algorithms-from-Scratch/blob/master/K%20Nearest%20Neighbours.py
-'''
 from utils import stringCheck, find_most_label
 
 from levenshtein import Levenshtein
@@ -12,6 +9,15 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class StringKNN:
+    '''
+    This class is used to classify the strings based on the distances(similarities)
+    between them.
+    This method classify the label of the unknown string as the label with the highest
+    frequency within the k strings nearest to the unknown string.
+
+
+    reference:https://gitee.com/yukio233/Machine-Learning-Algorithms-from-Scratch/blob/master/K%20Nearest%20Neighbours.py
+    '''
     def __init__(self, k=3, method = "Levenshtein"):
         self.k = k
         self.method = method

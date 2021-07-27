@@ -1,7 +1,3 @@
-'''
-reference: https://github.com/agnivade/levenshtein
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 
@@ -11,6 +7,15 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class Levenshtein(MethodModel):
+    '''
+    This class is used to calculate the levenshtein distance between strings.
+    The levenshtein distance is the minimum number of operations for one string
+    to convert to another string. The operations includes: substitutions,
+    insertions and deletions.
+
+    reference: https://github.com/agnivade/levenshtein
+    '''
+
     def __init__(self):
         self.model_type = 'distance'
 

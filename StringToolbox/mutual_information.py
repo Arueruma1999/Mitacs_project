@@ -1,8 +1,3 @@
-'''
-reference: Rodrigues, E. O., et al. "Proposal and study of statistical features for string similarity computation and classification." International Journal of Data Mining, Modelling and Management 12(2020).DOI: 10.1504/IJDMMM.2020.108731
-           http://en.wikipedia.org/wiki/Mutual_information
-'''
-
 from error_message import numpyImportErrorMessage, inputTypeErrorMessage
 from model import MethodModel
 
@@ -12,6 +7,14 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class MI(MethodModel):
+    '''
+    This class is used to calculate the mutual information between strings.
+    This method basically measures the similarity between strings
+    by calculating the probability distribution of the character occurrence.
+
+    reference: Rodrigues, E. O., et al. "Proposal and study of statistical features for string similarity computation and classification." International Journal of Data Mining, Modelling and Management 12(2020).DOI: 10.1504/IJDMMM.2020.108731
+               http://en.wikipedia.org/wiki/Mutual_information
+    '''
     def __init__(self):
         self.model_type = 'similarity'
 

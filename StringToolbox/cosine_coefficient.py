@@ -1,7 +1,3 @@
-'''
-reference: [1] Thada, V. , and  D. V. Jaglan . "Comparison of Jaccard, Dice, Cosine Similarity Coefficient To Find Best Fitness Value for Web Retrieved Documents Using Genetic Algorithm." International Journal of Innovations in Engineering and Technology 2.4(2013):202-205.
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 from utils import get_n_grams
@@ -13,6 +9,13 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class CC(MethodModel):
+    '''
+    This class is used to calculate the cosine coefficient between strings.
+    The cosine coefficient measures the similarity of the substrings components
+    of the two strings.
+
+    reference: [1] Thada, V. , and  D. V. Jaglan . "Comparison of Jaccard, Dice, Cosine Similarity Coefficient To Find Best Fitness Value for Web Retrieved Documents Using Genetic Algorithm." International Journal of Innovations in Engineering and Technology 2.4(2013):202-205.
+    '''
     def __init__(self, n = 1):
         self.model_type = 'similarity'
         self.n = n

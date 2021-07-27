@@ -1,6 +1,3 @@
-'''
-reference: https://www.sciencedirect.com/topics/engineering/hamming-distance
-'''
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 
@@ -10,6 +7,13 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class Hamming(MethodModel):
+    '''
+    This class is used to calculate the hamming distance between strings.
+    For two ordered sequence, the value of hamming distance is the number of the
+    characters they differ.
+
+    reference: https://www.sciencedirect.com/topics/engineering/hamming-distance
+    '''
     def __init__(self):
         self.model_type = 'distance'
 

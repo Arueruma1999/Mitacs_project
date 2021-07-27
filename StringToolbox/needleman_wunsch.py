@@ -1,7 +1,4 @@
-'''
-https://github.com/timreid/needlemanWunsch/blob/master/needleman_wunsch.py
-'''
-from error_message import numpyImportErrorMessage
+from error_message import numpyImportErrorMessage, modeErrorMessage
 from model import MethodModel
 
 try:
@@ -10,6 +7,13 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class NeedlemanWunsch(MethodModel):
+    '''
+    This class is used to calculate the needleman wunsch similarity between strings.
+    Basically, this method rate the similarity score of two strings by dynamic
+    programming method, similarly to levenshtein.
+
+    https://github.com/timreid/needlemanWunsch/blob/master/needleman_wunsch.py
+    '''
     def __init__(self):
         self.model_type = 'similarity'
         self.match_point = 1.0
@@ -41,15 +45,33 @@ class NeedlemanWunsch(MethodModel):
         self.max = np.maximum(lengths1, lengths2)
         self.min = np.maximum(lengths1, lengths2)*self.gap_lost
 
-    def get_distance(self):
-        return -self.answers
+    def get_distance(self, mode = 'all'):
+        if mode == 'all':
+            return -self.answers
+        elif mode == 'max':
+            return np.max(-self.answers)
+        elif mode == 'min':
+            return np.min(-self.answers)
+        else:
+            raise(modeErrorMessage)
 
-    def get_similarity(self):
-        return self.answers
+    def get_normalized_similarity(self, mode = 'all'):
+        if mode == 'all':
+            return (self.answers-self.min)/(self.max*2)
+        elif mode == 'max':
+            return np.max((self.answers-self.min)/(self.max*2), axis=1)
+        elif mode == 'min':
+            return np.min((self.answers-self.min)/(self.max*2), axis=1)
+        else:
+            raise(modeErrorMessage)
 
-    def get_normalized_similarity(self):
-        return (self.answers-self.min)/(self.max*2)
-
-    def get_normalized_distance(self):
-        return 1 - self.get_normalized_similarity()
+    def get_normalized_distance(self, mode = 'all'):
+        if mode == 'all':
+            return 1 - self.get_normalized_similarity()
+        elif mode == 'max':
+            return np.max( 1 - self.get_normalized_similarity(), axis=1)
+        elif mode == 'min':
+            return np.min( 1 - self.get_normalized_similarity(), axis=1)
+        else:
+            raise(modeErrorMessage)
 

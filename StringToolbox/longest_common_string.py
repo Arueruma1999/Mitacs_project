@@ -1,7 +1,3 @@
-'''
-reference: https://www.programcreek.com/2015/04/longest-common-substring-java/
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 
@@ -11,6 +7,12 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class LCString(MethodModel):
+    '''
+    This class is used to calculate the longest common substring between strings.
+    Basically, it measures the similarity between strings.
+
+    reference: https://www.programcreek.com/2015/04/longest-common-substring-java/
+    '''
     def __init__(self):
         self.model_type = 'similarity'
 

@@ -1,7 +1,3 @@
-'''
-https://github.com/Yomguithereal/talisman/blob/master/src/metrics/distance/bag.js
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 from utils import get_n_grams
@@ -13,6 +9,13 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class Bag(MethodModel):
+    '''
+    This class is used to calculate the bag coefficient between strings.
+    The jaccard coefficient measures the similarity of the substrings components
+    of the two strings.
+
+    https://github.com/Yomguithereal/talisman/blob/master/src/metrics/distance/bag.js
+    '''
     def __init__(self, n = 1):
         self.model_type = 'distance'
         self.n = n

@@ -1,6 +1,3 @@
-'''
-reference: https://ilyankou.files.wordpress.com/2015/06/ib-extended-essay.pdf
-'''
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 from longest_common_string import LCString
@@ -11,6 +8,14 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class RO(MethodModel):
+    '''
+    This class is used to calculate the ratcliff obershelp similarity between strings.
+    This method measures the similarity between strings by iteratively finding the
+    longest common string in the remaining substring besides the longest common strings
+    which have been already found.
+
+    reference: https://ilyankou.files.wordpress.com/2015/06/ib-extended-essay.pdf
+    '''
     def __init__(self):
         self.model_type = 'similarity'
         self.lcs = LCString()

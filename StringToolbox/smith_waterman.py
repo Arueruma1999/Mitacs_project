@@ -1,6 +1,3 @@
-'''
-https://github.com/ekg/smithwaterman
-'''
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 
@@ -10,6 +7,13 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class SmithWaterman(MethodModel):
+    '''
+    This class is used to calculate the smith waterman similarity between strings.
+    This method measures the similarity between strings by finding the common
+    substring with the highest similarity instead of measuring the whole string.
+
+    https://github.com/ekg/smithwaterman
+    '''
     def __init__(self):
         self.model_type = 'similarity'
         self.match_point = 1.0

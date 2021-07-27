@@ -1,7 +1,3 @@
-'''
-reference: Islam, A., and D. Z. Inkpen. "Semantic similarity of short texts." Recent Advances in Natural Language Processing (2007):227--236.DOI: 10.1075/cilt.309.18isl
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 
@@ -11,6 +7,14 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class MCLCS(MethodModel):
+    '''
+    This class is used to calculate the maximal consecutive longest common sequence between strings.
+    Basically, it measures the similarity between strings.
+
+    reference: Islam, A., and D. Z. Inkpen. "Semantic similarity of short texts."
+    Recent Advances in Natural Language Processing (2007):227--236.DOI: 10.1075/cilt.309.18isl
+    '''
+
     def __init__(self):
         self.model_type = 'similarity'
 

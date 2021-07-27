@@ -1,8 +1,3 @@
-'''
-reference: Rodrigues, E. O., et al. "Proposal and study of statistical features for string similarity computation and classification." International Journal of Data Mining, Modelling and Management 12(2020).DOI: 10.1504/IJDMMM.2020.108731
-           https://help.highbond.com/helpdocs/analytics/13/scripting-guide/zh-cn/Content/lang_ref/functions/r_dicecoefficient.htm#top-page
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 from utils import get_n_grams
@@ -14,6 +9,15 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class DC(MethodModel):
+    '''
+    This class is used to calculate the dice coefficient between strings.
+    The dice coefficient measures the similarity of the substrings components
+    of the two strings.
+
+    reference: Rodrigues, E. O., et al. "Proposal and study of statistical features for string similarity computation and classification." International Journal of Data Mining, Modelling and Management 12(2020).DOI: 10.1504/IJDMMM.2020.108731
+               https://help.highbond.com/helpdocs/analytics/13/scripting-guide/zh-cn/Content/lang_ref/functions/r_dicecoefficient.htm#top-page
+    '''
+
     def __init__(self, n = 1):
         self.model_type = 'similarity'
         self.n = n

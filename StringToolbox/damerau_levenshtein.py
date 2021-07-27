@@ -1,6 +1,4 @@
-'''
-reference: https://github.com/cbaatz/damerau-levenshtein
-'''
+
 
 from error_message import numpyImportErrorMessage
 from model import MethodModel
@@ -11,6 +9,16 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class DamerauLevenshtein(MethodModel):
+    '''
+    This class is used to calculate the damerau-levenshtein distance between strings.
+    The levenshtein distance is the minimum number of operations for one string
+    to convert to another string. The operations includes: substitutions,
+    insertions and deletions. As the improvement, the operations in damerau-levenshtein
+    distance includes substitutions, insertions, deletions and transpositions compared
+    with traditional levenshtein distance.
+
+    reference: https://github.com/cbaatz/damerau-levenshtein
+    '''
     def __init__(self):
         self.model_type = 'distance'
 

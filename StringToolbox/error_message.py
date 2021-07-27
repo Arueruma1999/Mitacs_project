@@ -8,3 +8,4 @@ inputTypeErrorMessage = "The type of input is not correct, please recheck. The i
                                              for between group comparison."
 numpyImportErrorMessage = "Please install the numpy package first."
 unfitErrorMessage = "Error occurred, please fit the model first."
+modeErrorMessage = "Please select the mode as 'all(default)', 'max' or 'min'"

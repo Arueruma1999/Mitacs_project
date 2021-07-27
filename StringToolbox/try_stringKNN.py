@@ -19,6 +19,7 @@ from cooccurrence_over_distance import COD
 import numpy as np
 from k_nearest_neighbors import StringKNN
 import textdistance as td
+from k_nearest_neighbors import StringKNN
 
 if __name__ == "__main__":
 
@@ -27,27 +28,9 @@ if __name__ == "__main__":
     X_test = ["hellowor3ld", "hello1world5", "hel3loworldv", "he1llowo3rld", "goodby5e", "goodvye", "g5sdbye", "goo45dbye"]
     y_train = [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
     y_test = [0,0,0,0,1,1,1,1]
-    lvs = SmithWaterman()
-    lvs.fit(X_train, X_test)
-    answers1 = lvs.get_normalized_similarity()
-    # print(td.levenshtein.normalized_distance(str1, str2))
 
-    answers2 = np.empty((len(X_train), len(X_test)))
-    for i, string1 in enumerate(X_train):
-        for j, string2 in enumerate(X_test):
-            answers2[i][j] = td.smith_waterman.normalized_similarity(string1, string2)
-    print("-----------------------------------------")
-    print(np.abs(answers1-answers2)<0.0000001)
-    print(answers1)
-    print("-----------------------------------------")
-    print(answers2)
-
-
-
-
-
-
-
-
-
-
+    knn = StringKNN()
+    knn.fit(X_train, y_train)
+    prediction = knn.predict(X_test)
+    print(prediction)
+    print("accuracy = ", sum(prediction==y_test)/len(y_test))

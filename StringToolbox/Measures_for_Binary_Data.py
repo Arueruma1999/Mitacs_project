@@ -2,8 +2,8 @@
 ------------------------------------------------------------------------------------------------------------------------
 Guidance:
 
-MBS is the class to calculate the similarity or the distance for two binary vector of the same size.
-First, the method name should be given when MBS class is established.
+MBD is the class to calculate the similarity or the distance for two binary vector of the same size.
+First, the method name should be given when MBD class is established.
 
 Second, the data in size (2, len(vector)), whose first row is the i binary vector and second row is the j binary vector,
 could be used to train the model with the function: self.fit(data)

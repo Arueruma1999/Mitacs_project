@@ -1,7 +1,3 @@
-'''
-reference: https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
-'''
-
 from error_message import numpyImportErrorMessage
 from model import MethodModel
 
@@ -11,6 +7,12 @@ except ImportError:
     raise Exception(numpyImportErrorMessage)
 
 class LCSequence(MethodModel):
+    '''
+    This class is used to calculate the longest common sequence between strings.
+    Basically, it measures the similarity between strings.
+
+    reference: https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
+    '''
     def __init__(self):
         self.model_type = 'similarity'
 
